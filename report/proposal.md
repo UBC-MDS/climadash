@@ -12,4 +12,16 @@ The fact that the data is provided on a daily basis is extremely valuable as it 
 
 ## Research Questions and Usage Scenarios
 
-ADD TEXT HERE
+"Emily", a 25-year-old university student living in Ottawa, Canada. She is focused on her studies and does not have much time to keep up with current events. Although Emily has heard about climate change, she does not fully understand what it is, why it is important, or how it affects her daily life.
+
+Emily's lack of understanding about climate change is not uncommon. She has never been exposed to the facts about the dynamic climate changes happening in Canada and its provinces. She does not know that the average annual temperature in Canada has increased by 1.7°C since 1948, and that this trend is projected to continue. She is also unaware that the average annual precipitation has increased by 12% since the 1950s, leading to more extreme weather events like floods and droughts.
+
+As Emily navigates through this dashboard, she might be initially overwhelmed by the amount of information. She sees a map of Canada and realizes that each province has its unique climate change dynamic. She wonders how the weather can be so different from one place to another.
+
+### Research Questions
+
+- Have the annual average tempretures in Canada, as a whole, and for each province been steady over the past years?
+- Have the annual average precipitation in Canada, as a whole, and for each province been steady over the past years?
+- Have the temprature dynamic patterns in difference provinces been different or similar?
+- Have the pericipitation dynamic patterns in difference provinces been different or similar?
+- Which provinces have eperienced more serious climate changes? 
