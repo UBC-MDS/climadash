@@ -2,7 +2,11 @@
 
 ## Motivation and Purpose
 
-ADD TEXT HERE
+Our role: Climate Data Scientist Group
+
+Target audience: Canadian environmental government administrators
+
+Climate change has been a controversial topic when it comes to government policy making. We proivde clear evidence on the climate change trend for Canadian government administrators as well as to inform the general public, we created the `climadash` dashboard to help visualize the complicated time-series climate data grouped by different regions. We will focus on temperature and precipiaion data now and allow flexible interaction with the graphs for the users to derive various conclusions, such as outlier data with min/max plot, and monthly average with rolling average charts.  
 
 ## Description of the Data
 
