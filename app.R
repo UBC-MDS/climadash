@@ -107,64 +107,26 @@ server <- function(input, output, session) {
             legend.title = element_text(face = "bold"))
   })
   
-  
-  
-  
-  
-  
-  
-  
-  
   output$month_averages <- renderPlot({
     dff <- filtered_data()
-    if (input$option =='Temperature'){
-        dff |>
-        group_by(month_name) |>
+    dff |>
+        group_by(month_name, CITY) |>
         summarise(month = mean(month),
-                  mean=mean(MEAN_TEMP_C)) |>
-        arrange(month) |>
-        ggplot(aes(x=reorder(month_name, month), mean)) +
-        geom_col(fill = 'blue') +
-        scale_y_continuous(breaks = seq(-30, 40, by = 5))+
-        theme(panel.grid.major.y = element_line(color = "grey",
-                                                size = 0.5,
-                                                linetype = 2))+ 
-        ggtitle(paste0("Monthly Average of ", input$option, " in \"", unique(dff$CITY), "\" from ", input$range[1], " to ", input$range[2])) +
-        xlab("") + ylab("CELSIUS")+ 
-        theme(text = element_text(size=12),
-              plot.title = element_text(face = "bold"),
-              axis.title = element_text(face = "bold"),
-              legend.title = element_text(face = "bold"))} else {
-          dff |>
-            group_by(month_name) |>
-            summarise(month = mean(month),
-                      mean=mean(TOTAL_PERCIP_mm))|>
-            arrange(month) |>
-            ggplot(aes(x=reorder(month_name, month), y=mean)) +
-            geom_col(fill = 'blue') +
-            scale_y_continuous(breaks = seq(0, 220, by = 1))+
-            theme(panel.grid.major.y = element_line(color = "grey",
-                                                    size = 0.5,
-                                                    linetype = 2))+ 
-            ggtitle(paste0("Monthly Average of ", input$option, " in \"", unique(dff$CITY), "\" from ", input$range[1], " to ", input$range[2])) +
-            xlab("") + ylab("millimeters")+
-                  theme(text = element_text(size=12),
-                        plot.title = element_text(face = "bold"),
-                        axis.title = element_text(face = "bold"),
-                        legend.title = element_text(face = "bold"))
-          
-        }
+                  mean=mean(value)) |>
+        arrange(month) |> ggplot(aes(x=reorder(month_name, month), y=mean, fill=CITY)) +
+      geom_col(stat="identity", color="white", position=position_dodge()) +
+      scale_y_continuous(breaks = seq(-30, 40, by = 5))+
+      theme(panel.grid.major.y = element_line(color = "grey",
+                                              size = 0.5,
+                                              linetype = 2))+ 
+      ggtitle(paste0("Monthly Average of ", input$option, "\" from ", input$range[1], " to ", input$range[2])) +
+      xlab("") + ylab("CELSIUS")+ 
+      theme(text = element_text(size=12),
+            plot.title = element_text(face = "bold"),
+            axis.title = element_text(face = "bold"),
+            legend.title = element_text(face = "bold"))
   
   })
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 }
 
