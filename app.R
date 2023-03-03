@@ -14,11 +14,13 @@ temp_df$LOCAL_DATE <- ymd(temp_df$LOCAL_DATE)
 temp_df$year <- year(temp_df$LOCAL_DATE)
 temp_df$month <- month(temp_df$LOCAL_DATE)
 temp_df$value <- temp_df$MEAN_TEMP_C
+temp_df$month_name <- month.abb[temp_df$month]
 
 percip_df$LOCAL_DATE <- ymd(percip_df$LOCAL_DATE)
 percip_df$year <- year(percip_df$LOCAL_DATE)
 percip_df$month <- month(percip_df$LOCAL_DATE)
 percip_df$value <- percip_df$TOTAL_PERCIP_mm
+percip_df$month_name <- month.abb[percip_df$month]
 
 year_range <- unique(temp_df$year)
 year_start <- min(year_range)
@@ -40,7 +42,8 @@ ui <- fluidPage(
   
     mainPanel(
       plotOutput("line_plot"),
-      plotOutput("line_plot2")
+      plotOutput("line_plot2"),
+      plotOutput("month_averages")
       
     )
   )
@@ -103,6 +106,65 @@ server <- function(input, output, session) {
             axis.title = element_text(face = "bold"),
             legend.title = element_text(face = "bold"))
   })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  output$month_averages <- renderPlot({
+    dff <- filtered_data()
+    if (input$option =='Temperature'){
+        dff |>
+        group_by(month_name) |>
+        summarise(month = mean(month),
+                  mean=mean(MEAN_TEMP_C)) |>
+        arrange(month) |>
+        ggplot(aes(x=reorder(month_name, month), mean)) +
+        geom_col(fill = 'blue') +
+        scale_y_continuous(breaks = seq(-30, 40, by = 5))+
+        theme(panel.grid.major.y = element_line(color = "grey",
+                                                size = 0.5,
+                                                linetype = 2))+ 
+        ggtitle(paste0("Monthly Average of ", input$option, " in \"", unique(dff$CITY), "\" from ", input$range[1], " to ", input$range[2])) +
+        xlab("") + ylab("CELSIUS")+ 
+        theme(text = element_text(size=12),
+              plot.title = element_text(face = "bold"),
+              axis.title = element_text(face = "bold"),
+              legend.title = element_text(face = "bold"))} else {
+          dff |>
+            group_by(month_name) |>
+            summarise(month = mean(month),
+                      mean=mean(TOTAL_PERCIP_mm))|>
+            arrange(month) |>
+            ggplot(aes(x=reorder(month_name, month), y=mean)) +
+            geom_col(fill = 'blue') +
+            scale_y_continuous(breaks = seq(0, 220, by = 1))+
+            theme(panel.grid.major.y = element_line(color = "grey",
+                                                    size = 0.5,
+                                                    linetype = 2))+ 
+            ggtitle(paste0("Monthly Average of ", input$option, " in \"", unique(dff$CITY), "\" from ", input$range[1], " to ", input$range[2])) +
+            xlab("") + ylab("millimeters")+
+                  theme(text = element_text(size=12),
+                        plot.title = element_text(face = "bold"),
+                        axis.title = element_text(face = "bold"),
+                        legend.title = element_text(face = "bold"))
+          
+        }
+  
+  })
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 }
 
