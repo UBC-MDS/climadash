@@ -65,7 +65,7 @@ server <- function(input, output, session) {
   
   # ======Get Data for Reactivity====== #
   filtered_data <- reactive({
-    if (input$option =='Temperature'){
+    if (input$option =='Temperature (C)'){
       temp_df |> 
         dplyr::filter(year >= input$range[1] & year <= input$range[2]) |>
         dplyr::filter(CITY %in% input$cities)
