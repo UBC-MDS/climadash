@@ -68,4 +68,7 @@ Here is a sketch of the dashboard.
 `climadash` was created by Vikram Grewal, Kelly Wu, Xinru Lu and Mehdi Naji. 
 It is licensed under the terms of the MIT license.
 
+## Dashboard Link
+📊 [Dashboard Link](https://mehdinaji.shinyapps.io/climadash/?_ga=2.176119010.1738350372.1677964154-1694350491.1676310661)
+
 
