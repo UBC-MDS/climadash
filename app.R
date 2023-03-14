@@ -5,6 +5,7 @@ library(shiny)
 library(ggplot2)
 library(tidyverse)
 library(lubridate)
+library(plotly)
 options(shiny.autoreload = TRUE)
 
 
@@ -48,11 +49,11 @@ ui <- fluidPage(
            uiOutput("cities"),
            radioButtons('option', 'Select Metric', options)),
     column(5,
-           plotOutput("line_plot"),
-           plotOutput("line_plot2")),
+           plotlyOutput("line_plot"),
+           plotlyOutput("line_plot2")),
     column(5,
-           plotOutput("month_averages"),
-           plotOutput("diff_plot"))
+           plotlyOutput("month_averages"),
+           plotlyOutput("diff_plot"))
   )
 )
 
@@ -86,15 +87,15 @@ server <- function(input, output, session) {
   })
   
   # ======Plot 1 - Annual Average Line Plot====== #
-  output$line_plot <- renderPlot({
-    plot1 <- filtered_data()
-    
-    plot1 |> 
+  output$line_plot <- renderPlotly({
+    plot1_data <- filtered_data() |> 
       group_by(year, CITY) |> 
-      summarise(year_avg = mean(value), .groups = 'drop') |>
-      ggplot(aes(x = year,
-                 y = year_avg,
-                 color = CITY)) +
+      summarise(year_avg = mean(value), .groups = 'drop')
+    
+    plot_1 <- ggplot(plot1_data) +
+      aes(x = year,
+          y = year_avg,
+          color = CITY) +
       geom_line() + xlim(input$range[1], input$range[2]) +
       labs(x = "Year", 
            y = paste("Annaul Average", input$option)) +
@@ -108,65 +109,69 @@ server <- function(input, output, session) {
   })
   
   # ======Plot 2 - Average Monthly Bar Plot====== #
-  output$month_averages <- renderPlot({
-    dff <- filtered_data()
-    dff |>
+  output$month_averages <- renderPlotly({
+    plot2_data <- filtered_data() |>
       group_by(month_name, CITY) |>
       summarise(month = mean(month),
                 mean=mean(value)) |>
-      arrange(month) |> ggplot(aes(x=reorder(month_name, month), y=mean, fill=CITY)) +
-      geom_col(stat="identity", color="white", position=position_dodge()) +
-      # scale_y_continuous(breaks = seq(-30, 40, by = 5))+
-      theme(panel.grid.major.y = element_line(color = "grey",
-                                              size = 0.5,
-                                              linetype = 2))+ 
-      ggtitle(paste0("Monthly Average of ", 
-                     input$option)) +
-      xlab("Month") + 
-      ylab(paste("Average Monthly",
-                 input$option))+
-      theme(text = element_text(size=12),
-            plot.title = element_text(face = "bold"),
-            axis.title = element_text(face = "bold"),
-            axis.text.x = element_text(angle = 90))
+      arrange(month)
+    
+  plot_2 <- ggplot(plot2_data) +
+    aes(x=reorder(month_name, month), 
+        y=mean, 
+        fill=CITY) +
+    geom_col(stat="identity", color="white", position=position_dodge()) +
+    # scale_y_continuous(breaks = seq(-30, 40, by = 5))+
+    theme(panel.grid.major.y = element_line(color = "grey",
+                                            size = 0.5,
+                                            linetype = 2))+ 
+    ggtitle(paste0("Monthly Average of ", 
+                   input$option)) +
+    xlab("Month") + 
+    ylab(paste("Average Monthly",
+               input$option))+
+    theme(text = element_text(size=12),
+          plot.title = element_text(face = "bold"),
+          axis.title = element_text(face = "bold"),
+          axis.text.x = element_text(angle = 90))
     
   })
   
   # ======Plot 3 - Annual Average Line Plot with Trendline====== #
-  output$line_plot2 <- renderPlot({
-    plot3 <- filtered_data()
-    
-    plot3 |> 
+  output$line_plot2 <- renderPlotly({
+    plot3_data <- filtered_data() |> 
       group_by(year, CITY) |> 
-      summarise(year_avg = mean(value), .groups = 'drop') |>
-      ggplot(aes(x = year,
-                 y = year_avg,
-                 color = CITY)) +
-      geom_point() + 
-      geom_smooth(se = TRUE, span = (input$range[2] - input$range[1])/10) +
-      xlim(input$range[1], input$range[2]) +
-      labs(x = "Year", 
-           y = paste("Annaul Average", input$option)) +
-      ggtitle(paste("Annual Average", 
-                    input$option,
-                    "Trends")) +
-      theme(text = element_text(size=12),
-            plot.title = element_text(face = "bold"),
-            axis.title = element_text(face = "bold"),
-            legend.position="none",
-            axis.text.x = element_text(angle = 90))
+      summarise(year_avg = mean(value), .groups = 'drop')
+  
+    plot_3 <- ggplot(plot3_data) +
+    aes(x = year,
+        y = year_avg,
+        color = CITY) +
+    geom_point() + 
+    geom_smooth(se = TRUE, span = (input$range[2] - input$range[1])/10) +
+    xlim(input$range[1], input$range[2]) +
+    labs(x = "Year", 
+         y = paste("Annaul Average", input$option)) +
+    ggtitle(paste("Annual Average", 
+                  input$option,
+                  "Trends")) +
+    theme(text = element_text(size=12),
+          plot.title = element_text(face = "bold"),
+          axis.title = element_text(face = "bold"),
+          legend.position="none",
+          axis.text.x = element_text(angle = 90))
   })
   
   # ======Plot 4 - Yearly Maximum Difference Line Plot====== #
-  output$diff_plot <- renderPlot({
-    plot3 <- filtered_data()
-    
-    plot3 |> 
+  output$diff_plot <- renderPlotly({
+    plot4_data <- filtered_data() |> 
       group_by(year, CITY) |> 
-      summarise(max_diff = max(value)-min(value), .groups = 'drop') |>
-      ggplot(aes(x = year,
-                 y = max_diff,
-                 color = CITY)) +
+      summarise(max_diff = max(value)-min(value), .groups = 'drop')
+    
+    plot_4 <-ggplot(plot4_data) +
+      aes(x = year,
+          y = max_diff,
+          color = CITY) +
       geom_line() +
       xlim(input$range[1], input$range[2]) +
       labs(x = "Year", y = paste("Max Difference in", input$option)) +
