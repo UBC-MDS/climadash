@@ -147,8 +147,9 @@ server <- function(input, output, session) {
       xlim(input$range[1], input$range[2]) +
       labs(x = "Year", 
            y = paste("Annaul Average", input$option)) +
-      ggtitle(paste("Trendline for Selected Cities' Annual Average", 
-                    input$option)) +
+      ggtitle(paste("Annual Average", 
+                    input$option,
+                    "Trends")) +
       theme(text = element_text(size=12),
             plot.title = element_text(face = "bold"),
             axis.title = element_text(face = "bold"),
@@ -169,7 +170,7 @@ server <- function(input, output, session) {
       geom_line() +
       xlim(input$range[1], input$range[2]) +
       labs(x = "Year", y = paste("Max Difference in", input$option)) +
-      ggtitle(paste("Yearly Difference Between Highest and Lowest", 
+      ggtitle(paste("Difference Between Max and Min", 
                     input$option)) +
       theme(text = element_text(size=12),
             plot.title = element_text(face = "bold"),
