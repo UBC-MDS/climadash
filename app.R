@@ -29,7 +29,7 @@ percip_df$month_name <- month.abb[percip_df$month]
 year_range <- unique(temp_df$year)
 year_start <- min(year_range)
 cities <- unique(temp_df$CITY)
-options <- c('Temperature (C)', 'Percipitation (mm)')
+options <- c('Temperature (C)', 'Precipitation (mm)')
 
 
 # =================================================================== #
@@ -116,7 +116,7 @@ server <- function(input, output, session) {
                 mean=mean(value)) |>
       arrange(month) |> ggplot(aes(x=reorder(month_name, month), y=mean, fill=CITY)) +
       geom_col(stat="identity", color="white", position=position_dodge()) +
-      scale_y_continuous(breaks = seq(-30, 40, by = 5))+
+      # scale_y_continuous(breaks = seq(-30, 40, by = 5))+
       theme(panel.grid.major.y = element_line(color = "grey",
                                               size = 0.5,
                                               linetype = 2))+ 
@@ -147,8 +147,9 @@ server <- function(input, output, session) {
       xlim(input$range[1], input$range[2]) +
       labs(x = "Year", 
            y = paste("Annaul Average", input$option)) +
-      ggtitle(paste("Trendline for Selected Cities' Annual Average", 
-                    input$option)) +
+      ggtitle(paste("Annual Average", 
+                    input$option,
+                    "Trends")) +
       theme(text = element_text(size=12),
             plot.title = element_text(face = "bold"),
             axis.title = element_text(face = "bold"),
@@ -169,7 +170,7 @@ server <- function(input, output, session) {
       geom_line() +
       xlim(input$range[1], input$range[2]) +
       labs(x = "Year", y = paste("Max Difference in", input$option)) +
-      ggtitle(paste("Yearly Difference Between Highest and Lowest", 
+      ggtitle(paste("Difference Between Max and Min", 
                     input$option)) +
       theme(text = element_text(size=12),
             plot.title = element_text(face = "bold"),
