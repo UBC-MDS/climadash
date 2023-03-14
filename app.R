@@ -29,7 +29,7 @@ percip_df$month_name <- month.abb[percip_df$month]
 year_range <- unique(temp_df$year)
 year_start <- min(year_range)
 cities <- unique(temp_df$CITY)
-options <- c('Temperature (C)', 'Percipitation (mm)')
+options <- c('Temperature (C)', 'Precipitation (mm)')
 
 
 # =================================================================== #
