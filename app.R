@@ -116,7 +116,7 @@ server <- function(input, output, session) {
                 mean=mean(value)) |>
       arrange(month) |> ggplot(aes(x=reorder(month_name, month), y=mean, fill=CITY)) +
       geom_col(stat="identity", color="white", position=position_dodge()) +
-      scale_y_continuous(breaks = seq(-30, 40, by = 5))+
+      # scale_y_continuous(breaks = seq(-30, 40, by = 5))+
       theme(panel.grid.major.y = element_line(color = "grey",
                                               size = 0.5,
                                               linetype = 2))+ 
