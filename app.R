@@ -67,6 +67,9 @@ ui <- fluidPage(
                        sep = ""),
            uiOutput("cities_dropdown"),
            radioButtons('option', 'Select Metric', options),
+           selectInput("dataset", "Choose a dataset:", choices = c("tempreture", "precipitation")),
+           downloadButton("downloadData", "Download"),
+          
            leafletOutput("map")          
            ),
     
@@ -109,6 +112,25 @@ server <- function(input, output, session) {
                 selected = c('VANCOUVER', 'TORONTO'))
   })
   
+  # ======Server Side of Download Button====== #
+
+  data <- reactive({
+    if (input$dataset == "tempreture") {
+      temp_df
+    } else if (input$dataset == "precipitation") {
+      percip_df
+    }
+  })
+  
+  output$downloadData <- downloadHandler(
+    filename = function() {
+      paste(input$dataset, ".csv", sep = "")
+    },
+    content = function(file) {
+      write.csv(data(), file, row.names = FALSE)
+    }
+  )
+   
   # ======Plot 1 - Annual Average Line Plot====== #
   output$line_plot <- renderPlotly({
     plot1_data <- filtered_data() |> 
