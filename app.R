@@ -6,6 +6,8 @@ library(ggplot2)
 library(tidyverse)
 library(lubridate)
 library(plotly)
+library(leaflet)
+
 options(shiny.autoreload = TRUE)
 
 
@@ -20,18 +22,35 @@ temp_df$year <- year(temp_df$LOCAL_DATE)
 temp_df$month <- month(temp_df$LOCAL_DATE)
 temp_df$value <- temp_df$MEAN_TEMP_C
 temp_df$month_name <- month.abb[temp_df$month]
+temp_df <- temp_df |> 
+  mutate(CITY = case_when(
+  CITY =="QUEBEC" ~ "QUEBEC CITY",
+  TRUE ~ CITY))
+       
 
 percip_df$LOCAL_DATE <- ymd(percip_df$LOCAL_DATE)
 percip_df$year <- year(percip_df$LOCAL_DATE)
 percip_df$month <- month(percip_df$LOCAL_DATE)
 percip_df$value <- percip_df$TOTAL_PERCIP_mm
 percip_df$month_name <- month.abb[percip_df$month]
+percip_df <- percip_df |> 
+  mutate(CITY = case_when(
+    CITY =="QUEBEC" ~ "QUEBEC CITY",
+    TRUE ~ CITY))
 
 year_range <- unique(temp_df$year)
 year_start <- min(year_range)
 cities <- unique(temp_df$CITY)
 options <- c('Temperature (C)', 'Precipitation (mm)')
 
+geo_data <- data.frame(
+  CITY = c("CALGARY", "EDMONTON", "HALIFAX", "MONCTON", "MONTREAL", "OTTAWA", "QUEBEC CITY",
+           "SASKATOON", "STJOHNS", "TORONTO", "VANCOUVER", "WHITEHORSE", "WINNIPEG"),
+  citylat = c(51.0447, 53.5444, 44.6488, 46.0878, 45.5017, 45.4215, 46.8139, 52.1332,
+              47.5615, 43.6532, 49.2827, 60.7212, 49.8951),
+  citylon = c(-114.0719, -113.4909, -63.5752, -64.7782, -73.5673, -75.6972, -71.2080,
+              -106.6700, -52.7126, -79.3832, -123.1207, -135.0568, -97.1384)
+)
 
 # =================================================================== #
 # ------------------------------SHINY UI----------------------------- #
@@ -41,14 +60,18 @@ ui <- fluidPage(
   titlePanel('Climate Metrics in Canada'),
   
   fluidRow(
-    column(2,
+    column(3,
            sliderInput("range", "Year Range:", 
                        min = 1940, max = 2019,
                        value = c(1940, 2019), step = 5,
                        sep = ""),
-           uiOutput("cities"),
-           radioButtons('option', 'Select Metric', options)),
-    column(5,
+           uiOutput("cities_dropdown"),
+           radioButtons('option', 'Select Metric', options),
+           leafletOutput("map")          
+           ),
+    
+    
+    column(4,
            plotlyOutput("line_plot"),
            plotlyOutput("line_plot2")),
     column(5,
@@ -78,7 +101,7 @@ server <- function(input, output, session) {
   })
   
   # ======Server Side of City Input====== #
-  output$cities <- renderUI({
+  output$cities_dropdown <- renderUI({
     selectInput("cities", 
                 "Select Cities", 
                 cities, 
@@ -184,8 +207,61 @@ server <- function(input, output, session) {
             axis.text.x = element_text(angle = 90))
   })
   
+  # ======================= Map Plot ========================== #
+  map_data <- reactive({
+    if (input$option =='Temperature (C)'){
+      temp_df |> 
+        dplyr::filter(year >= input$range[1] & year <= input$range[2]) 
+    } else{
+      percip_df |> 
+        dplyr::filter(year >= input$range[1] & year <= input$range[2])
+    }
+  })
+  
+  # Define the renderPlotly() function
+  output$map <- renderLeaflet({
+    
+    map_data_final <- map_data()|> group_by(CITY) |>
+      summarise(city_yavg = mean(value),
+                city_ymax = max(value),
+                city_ymin = min(value)) |> 
+      left_join(geo_data, by = "CITY")
+    
+    if (input$option =='Temperature (C)'){
+      pal <- colorNumeric(palette = "RdBu", 
+                          domain = map_data_final$city_yavg,
+                          reverse = TRUE)
+    } else{
+      pal <- colorNumeric(palette = "viridis", 
+                          domain = map_data_final$city_yavg)
+    }
+    
+    map_plot <- leaflet(data = map_data_final) |> 
+      addTiles() |>
+      addCircleMarkers(lng = ~citylon, # ~ to refer to the column in map_data_final
+                       lat = ~citylat,
+                       radius = 9,
+                       fillColor = ~pal(city_yavg), 
+                       fillOpacity = 1,
+                       stroke = TRUE,
+                       color = "grey",
+                       weight = 2,
+                       label = ~paste(CITY),
+                       labelOptions = labelOptions(noHide = TRUE, direction = "top", opacity = 0.8),
+                       popup = ~paste(CITY, "from", input$range[1], "to", input$range[2], "<br>",
+                                      "Average", input$option, "=", round(city_yavg, 2), "<br>",
+                                      "Max", input$option,"=", round(city_ymax, 2), "<br>",
+                                      "Min", input$option, "=", round(city_ymin, 2), "<br>"
+                       ),
+                       popupOptions = popupOptions(noHide = FALSE, direction = "auto")
+      ) |>
+      addLegend(pal = pal,
+                values = ~ city_yavg,
+                title = paste("Average <br>",input$option),
+                position = "bottomleft") |> 
+      setView(lng = -96.7898, lat = 46, zoom = 2)
+  })
 }
-
 # =================================================================== #
 # ------------------------------SHINY RUN---------------------------- #
 # =================================================================== #
