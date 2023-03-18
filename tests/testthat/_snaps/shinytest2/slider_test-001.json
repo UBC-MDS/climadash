@@ -1,0 +1,570 @@
+{
+  "output": {
+    "line_plot": {
+      "x": {
+        "data": [
+          {
+            "x": [
+              1985,
+              1986,
+              1987,
+              1988,
+              1989,
+              1990,
+              1991,
+              1992,
+              1993,
+              1994,
+              1995,
+              1996,
+              1997,
+              1998,
+              1999,
+              2000,
+              2001,
+              2002,
+              2003,
+              2004,
+              2005,
+              2006,
+              2007,
+              2008,
+              2009,
+              2010,
+              2011,
+              2012,
+              2013,
+              2014,
+              2015,
+              2016,
+              2017,
+              2018,
+              2019
+            ],
+            "y": [
+              7.26109589041096,
+              7.62602739726027,
+              8.60986301369863,
+              7.89371584699454,
+              7.08356164383562,
+              8.76465753424658,
+              8.95424657534247,
+              7.02748633879781,
+              7.20295890410959,
+              7.41890410958904,
+              7.88794520547945,
+              7.19098360655738,
+              7.59890410958904,
+              10.2046575342466,
+              9.50821917808219,
+              8.27158469945355,
+              9.7027397260274,
+              9.47671232876712,
+              7.98383561643836,
+              8.24863387978142,
+              9.06684931506849,
+              9.79178082191781,
+              9.00438356164384,
+              8.2724043715847,
+              8.03315068493151,
+              9.61287671232877,
+              9.17917808219178,
+              10.5352459016393,
+              8.55424657534247,
+              7.48301369863014,
+              8.64575342465753,
+              10.0877049180328,
+              9.3013698630137,
+              9.11424657534247,
+              8.18860273972603
+            ],
+            "text": [
+              "year: 1985<br />year_avg:  7.261096<br />CITY: TORONTO",
+              "year: 1986<br />year_avg:  7.626027<br />CITY: TORONTO",
+              "year: 1987<br />year_avg:  8.609863<br />CITY: TORONTO",
+              "year: 1988<br />year_avg:  7.893716<br />CITY: TORONTO",
+              "year: 1989<br />year_avg:  7.083562<br />CITY: TORONTO",
+              "year: 1990<br />year_avg:  8.764658<br />CITY: TORONTO",
+              "year: 1991<br />year_avg:  8.954247<br />CITY: TORONTO",
+              "year: 1992<br />year_avg:  7.027486<br />CITY: TORONTO",
+              "year: 1993<br />year_avg:  7.202959<br />CITY: TORONTO",
+              "year: 1994<br />year_avg:  7.418904<br />CITY: TORONTO",
+              "year: 1995<br />year_avg:  7.887945<br />CITY: TORONTO",
+              "year: 1996<br />year_avg:  7.190984<br />CITY: TORONTO",
+              "year: 1997<br />year_avg:  7.598904<br />CITY: TORONTO",
+              "year: 1998<br />year_avg: 10.204658<br />CITY: TORONTO",
+              "year: 1999<br />year_avg:  9.508219<br />CITY: TORONTO",
+              "year: 2000<br />year_avg:  8.271585<br />CITY: TORONTO",
+              "year: 2001<br />year_avg:  9.702740<br />CITY: TORONTO",
+              "year: 2002<br />year_avg:  9.476712<br />CITY: TORONTO",
+              "year: 2003<br />year_avg:  7.983836<br />CITY: TORONTO",
+              "year: 2004<br />year_avg:  8.248634<br />CITY: TORONTO",
+              "year: 2005<br />year_avg:  9.066849<br />CITY: TORONTO",
+              "year: 2006<br />year_avg:  9.791781<br />CITY: TORONTO",
+              "year: 2007<br />year_avg:  9.004384<br />CITY: TORONTO",
+              "year: 2008<br />year_avg:  8.272404<br />CITY: TORONTO",
+              "year: 2009<br />year_avg:  8.033151<br />CITY: TORONTO",
+              "year: 2010<br />year_avg:  9.612877<br />CITY: TORONTO",
+              "year: 2011<br />year_avg:  9.179178<br />CITY: TORONTO",
+              "year: 2012<br />year_avg: 10.535246<br />CITY: TORONTO",
+              "year: 2013<br />year_avg:  8.554247<br />CITY: TORONTO",
+              "year: 2014<br />year_avg:  7.483014<br />CITY: TORONTO",
+              "year: 2015<br />year_avg:  8.645753<br />CITY: TORONTO",
+              "year: 2016<br />year_avg: 10.087705<br />CITY: TORONTO",
+              "year: 2017<br />year_avg:  9.301370<br />CITY: TORONTO",
+              "year: 2018<br />year_avg:  9.114247<br />CITY: TORONTO",
+              "year: 2019<br />year_avg:  8.188603<br />CITY: TORONTO"
+            ],
+            "type": "scatter",
+            "mode": "lines",
+            "line": {
+              "width": 1.88976377952756,
+              "color": "rgba(230,159,0,1)",
+              "dash": "solid"
+            },
+            "hoveron": "points",
+            "name": "TORONTO",
+            "legendgroup": "TORONTO",
+            "showlegend": true,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
+          },
+          {
+            "x": [
+              1985,
+              1986,
+              1987,
+              1988,
+              1989,
+              1990,
+              1991,
+              1992,
+              1993,
+              1994,
+              1995,
+              1996,
+              1997,
+              1998,
+              1999,
+              2000,
+              2001,
+              2002,
+              2003,
+              2004,
+              2005,
+              2006,
+              2007,
+              2008,
+              2009,
+              2010,
+              2011,
+              2012,
+              2013,
+              2014,
+              2015,
+              2016,
+              2017,
+              2018,
+              2019
+            ],
+            "y": [
+              8.92438356164384,
+              10.4512328767123,
+              11.0282191780822,
+              10.5021857923497,
+              10.2038356164384,
+              10.2657534246575,
+              10.1934246575342,
+              11.0590163934426,
+              10.1147945205479,
+              10.8041095890411,
+              11.0238356164384,
+              9.78060109289618,
+              10.7975342465753,
+              11.3539726027397,
+              10.2865753424658,
+              10.1314207650273,
+              10.2575342465753,
+              10.3500821917808,
+              10.9616438356164,
+              11.4516393442623,
+              10.8575342465753,
+              10.6975342465753,
+              10.2476712328767,
+              9.85191256830601,
+              10.2698630136986,
+              11.0024657534247,
+              9.95753424657534,
+              10.3707650273224,
+              10.4405479452055,
+              11.0183561643836,
+              11.4415342465753,
+              11.2000546448087,
+              10.2243835616438,
+              10.8089315068493,
+              10.4095342465753
+            ],
+            "text": [
+              "year: 1985<br />year_avg:  8.924384<br />CITY: VANCOUVER",
+              "year: 1986<br />year_avg: 10.451233<br />CITY: VANCOUVER",
+              "year: 1987<br />year_avg: 11.028219<br />CITY: VANCOUVER",
+              "year: 1988<br />year_avg: 10.502186<br />CITY: VANCOUVER",
+              "year: 1989<br />year_avg: 10.203836<br />CITY: VANCOUVER",
+              "year: 1990<br />year_avg: 10.265753<br />CITY: VANCOUVER",
+              "year: 1991<br />year_avg: 10.193425<br />CITY: VANCOUVER",
+              "year: 1992<br />year_avg: 11.059016<br />CITY: VANCOUVER",
+              "year: 1993<br />year_avg: 10.114795<br />CITY: VANCOUVER",
+              "year: 1994<br />year_avg: 10.804110<br />CITY: VANCOUVER",
+              "year: 1995<br />year_avg: 11.023836<br />CITY: VANCOUVER",
+              "year: 1996<br />year_avg:  9.780601<br />CITY: VANCOUVER",
+              "year: 1997<br />year_avg: 10.797534<br />CITY: VANCOUVER",
+              "year: 1998<br />year_avg: 11.353973<br />CITY: VANCOUVER",
+              "year: 1999<br />year_avg: 10.286575<br />CITY: VANCOUVER",
+              "year: 2000<br />year_avg: 10.131421<br />CITY: VANCOUVER",
+              "year: 2001<br />year_avg: 10.257534<br />CITY: VANCOUVER",
+              "year: 2002<br />year_avg: 10.350082<br />CITY: VANCOUVER",
+              "year: 2003<br />year_avg: 10.961644<br />CITY: VANCOUVER",
+              "year: 2004<br />year_avg: 11.451639<br />CITY: VANCOUVER",
+              "year: 2005<br />year_avg: 10.857534<br />CITY: VANCOUVER",
+              "year: 2006<br />year_avg: 10.697534<br />CITY: VANCOUVER",
+              "year: 2007<br />year_avg: 10.247671<br />CITY: VANCOUVER",
+              "year: 2008<br />year_avg:  9.851913<br />CITY: VANCOUVER",
+              "year: 2009<br />year_avg: 10.269863<br />CITY: VANCOUVER",
+              "year: 2010<br />year_avg: 11.002466<br />CITY: VANCOUVER",
+              "year: 2011<br />year_avg:  9.957534<br />CITY: VANCOUVER",
+              "year: 2012<br />year_avg: 10.370765<br />CITY: VANCOUVER",
+              "year: 2013<br />year_avg: 10.440548<br />CITY: VANCOUVER",
+              "year: 2014<br />year_avg: 11.018356<br />CITY: VANCOUVER",
+              "year: 2015<br />year_avg: 11.441534<br />CITY: VANCOUVER",
+              "year: 2016<br />year_avg: 11.200055<br />CITY: VANCOUVER",
+              "year: 2017<br />year_avg: 10.224384<br />CITY: VANCOUVER",
+              "year: 2018<br />year_avg: 10.808932<br />CITY: VANCOUVER",
+              "year: 2019<br />year_avg: 10.409534<br />CITY: VANCOUVER"
+            ],
+            "type": "scatter",
+            "mode": "lines",
+            "line": {
+              "width": 1.88976377952756,
+              "color": "rgba(0,158,115,1)",
+              "dash": "solid"
+            },
+            "hoveron": "points",
+            "name": "VANCOUVER",
+            "legendgroup": "VANCOUVER",
+            "showlegend": true,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
+          }
+        ],
+        "layout": {
+          "margin": {
+            "t": 41.6814722568147,
+            "r": 7.30593607305936,
+            "b": 61.2148886121489,
+            "l": 42.8393524283935
+          },
+          "plot_bgcolor": "rgba(47,47,47,1)",
+          "paper_bgcolor": "rgba(34,34,34,1)",
+          "font": {
+            "color": "rgba(255,255,255,1)",
+            "family": "''",
+            "size": 15.9402241594022
+          },
+          "title": {
+            "text": "<b> Annual Average Temperature (C) <\/b>",
+            "font": {
+              "color": "rgba(255,255,255,1)",
+              "family": "''",
+              "size": 15.9402241594022
+            },
+            "x": 0,
+            "xref": "paper"
+          },
+          "xaxis": {
+            "domain": [
+              0,
+              1
+            ],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [
+              1983.3,
+              2020.7
+            ],
+            "tickmode": "array",
+            "ticktext": [
+              "1990",
+              "2000",
+              "2010",
+              "2020"
+            ],
+            "tickvals": [
+              1990,
+              2000,
+              2010,
+              2020
+            ],
+            "categoryorder": "array",
+            "categoryarray": [
+              "1990",
+              "2000",
+              "2010",
+              "2020"
+            ],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(203,203,203,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(175,175,175,1)",
+              "family": "''",
+              "size": 15.9402241594022
+            },
+            "tickangle": -90,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(34,34,34,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y",
+            "title": {
+              "text": "<b> Year <\/b>",
+              "font": {
+                "color": "rgba(255,255,255,1)",
+                "family": "''",
+                "size": 15.9402241594022
+              }
+            },
+            "hoverformat": ".2f"
+          },
+          "yaxis": {
+            "domain": [
+              0,
+              1
+            ],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [
+              6.80627868852459,
+              11.6728469945355
+            ],
+            "tickmode": "array",
+            "ticktext": [
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "tickvals": [
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "categoryorder": "array",
+            "categoryarray": [
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(203,203,203,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(175,175,175,1)",
+              "family": "''",
+              "size": 15.9402241594022
+            },
+            "tickangle": 0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(34,34,34,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": {
+              "text": "<b> Annaul Average Temperature (C) <\/b>",
+              "font": {
+                "color": "rgba(255,255,255,1)",
+                "family": "''",
+                "size": 15.9402241594022
+              }
+            },
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": [
+
+                ]
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 1
+            }
+          ],
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(34,34,34,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(255,255,255,1)",
+              "family": "''",
+              "size": 15.9402241594022
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
+        },
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": [
+            "hoverclosest",
+            "hovercompare"
+          ],
+          "showSendToCloud": false
+        },
+        "source": "A",
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": [
+          "plotly_hover",
+          "plotly_click",
+          "plotly_selected",
+          "plotly_relayout",
+          "plotly_brushed",
+          "plotly_brushing",
+          "plotly_clickannotation",
+          "plotly_doubleclick",
+          "plotly_deselect",
+          "plotly_afterplot",
+          "plotly_sunburstclick"
+        ],
+        "base_url": "https://plot.ly"
+      },
+      "evals": [
+
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+        {
+          "name": "setprototypeof",
+          "version": "0.1",
+          "src": {
+            "href": "setprototypeof-0.1"
+          },
+          "meta": null,
+          "script": "setprototypeof.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "typedarray",
+          "version": "0.1",
+          "src": {
+            "href": "typedarray-0.1"
+          },
+          "meta": null,
+          "script": "typedarray.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "jquery",
+          "version": "3.5.1",
+          "src": {
+            "href": "jquery-3.5.1"
+          },
+          "meta": null,
+          "script": "jquery.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "crosstalk",
+          "version": "1.2.0",
+          "src": {
+            "href": "crosstalk-1.2.0"
+          },
+          "meta": null,
+          "script": "js/crosstalk.min.js",
+          "stylesheet": "css/crosstalk.min.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "plotly-htmlwidgets-css",
+          "version": "2.11.1",
+          "src": {
+            "href": "plotly-htmlwidgets-css-2.11.1"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": "plotly-htmlwidgets.css",
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "plotly-main",
+          "version": "2.11.1",
+          "src": {
+            "href": "plotly-main-2.11.1"
+          },
+          "meta": null,
+          "script": "plotly-latest.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        }
+      ]
+    }
+  }
+}

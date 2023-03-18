@@ -1,0 +1,224 @@
+{
+  "output": {
+    "map": {
+      "x": {
+        "options": {
+          "crs": {
+            "crsClass": "L.CRS.EPSG3857",
+            "code": null,
+            "proj4def": null,
+            "projectedBounds": null,
+            "options": {
+
+            }
+          }
+        },
+        "calls": [
+          {
+            "method": "addTiles",
+            "args": [
+              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+              null,
+              null,
+              {
+                "minZoom": 0,
+                "maxZoom": 18,
+                "tileSize": 256,
+                "subdomains": "abc",
+                "errorTileUrl": "",
+                "tms": false,
+                "noWrap": false,
+                "zoomOffset": 0,
+                "zoomReverse": false,
+                "opacity": 1,
+                "zIndex": 1,
+                "detectRetina": false,
+                "attribution": "&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"
+              }
+            ]
+          },
+          {
+            "method": "addCircleMarkers",
+            "args": [
+              [
+                51.0447,
+                53.5444,
+                44.6488,
+                46.0878,
+                45.5017,
+                45.4215,
+                46.8139,
+                52.1332,
+                47.5615,
+                43.6532,
+                49.2827,
+                60.7212,
+                49.8951
+              ],
+              [
+                -114.0719,
+                -113.4909,
+                -63.5752,
+                -64.7782,
+                -73.5673,
+                -75.6972,
+                -71.208,
+                -106.67,
+                -52.7126,
+                -79.3832,
+                -123.1207,
+                -135.0568,
+                -97.1384
+              ],
+              9,
+              null,
+              null,
+              {
+                "interactive": true,
+                "className": "",
+                "stroke": true,
+                "color": "grey",
+                "weight": 2,
+                "opacity": 0.5,
+                "fill": true,
+                "fillColor": [
+                  "#D9E9F2",
+                  "#6CABD0",
+                  "#F9BC9F",
+                  "#FBE9DE",
+                  "#F8B597",
+                  "#FCD0B9",
+                  "#E9F0F4",
+                  "#6FACD1",
+                  "#F8F3F0",
+                  "#DB6B55",
+                  "#67001F",
+                  "#053061",
+                  "#A0CCE2"
+                ],
+                "fillOpacity": 1
+              },
+              null,
+              null,
+              [
+                "CALGARY from 1940 to 2019 <br> Average Temperature (C) = 4.02 <br> Max Temperature (C) = 26.2 <br> Min Temperature (C) = -37.5 <br>",
+                "EDMONTON from 1940 to 2019 <br> Average Temperature (C) = 2.18 <br> Max Temperature (C) = 24.7 <br> Min Temperature (C) = -40.8 <br>",
+                "HALIFAX from 1940 to 2019 <br> Average Temperature (C) = 6.52 <br> Max Temperature (C) = 27 <br> Min Temperature (C) = -23.5 <br>",
+                "MONCTON from 1940 to 2019 <br> Average Temperature (C) = 5.39 <br> Max Temperature (C) = 27.2 <br> Min Temperature (C) = -27.4 <br>",
+                "MONTREAL from 1940 to 2019 <br> Average Temperature (C) = 6.65 <br> Max Temperature (C) = 30.3 <br> Min Temperature (C) = -30.9 <br>",
+                "OTTAWA from 1940 to 2019 <br> Average Temperature (C) = 6.12 <br> Max Temperature (C) = 30 <br> Min Temperature (C) = -31.3 <br>",
+                "QUEBEC CITY from 1940 to 2019 <br> Average Temperature (C) = 4.45 <br> Max Temperature (C) = 28.9 <br> Min Temperature (C) = -30.6 <br>",
+                "SASKATOON from 1940 to 2019 <br> Average Temperature (C) = 2.22 <br> Max Temperature (C) = 32.1 <br> Min Temperature (C) = -41.7 <br>",
+                "STJOHNS from 1940 to 2019 <br> Average Temperature (C) = 5.01 <br> Max Temperature (C) = 25.2 <br> Min Temperature (C) = -21.3 <br>",
+                "TORONTO from 1940 to 2019 <br> Average Temperature (C) = 7.87 <br> Max Temperature (C) = 31.8 <br> Min Temperature (C) = -24.7 <br>",
+                "VANCOUVER from 1940 to 2019 <br> Average Temperature (C) = 10.15 <br> Max Temperature (C) = 28.4 <br> Min Temperature (C) = -14.5 <br>",
+                "WHITEHORSE from 1940 to 2019 <br> Average Temperature (C) = -0.45 <br> Max Temperature (C) = 23.9 <br> Min Temperature (C) = -48.1 <br>",
+                "WINNIPEG from 1940 to 2019 <br> Average Temperature (C) = 2.96 <br> Max Temperature (C) = 30.9 <br> Min Temperature (C) = -38.6 <br>"
+              ],
+              {
+                "maxWidth": 300,
+                "minWidth": 50,
+                "autoPan": true,
+                "keepInView": false,
+                "closeButton": true,
+                "className": "",
+                "noHide": false,
+                "direction": "auto"
+              },
+              [
+                "CALGARY",
+                "EDMONTON",
+                "HALIFAX",
+                "MONCTON",
+                "MONTREAL",
+                "OTTAWA",
+                "QUEBEC CITY",
+                "SASKATOON",
+                "STJOHNS",
+                "TORONTO",
+                "VANCOUVER",
+                "WHITEHORSE",
+                "WINNIPEG"
+              ],
+              {
+                "interactive": false,
+                "permanent": true,
+                "direction": "top",
+                "opacity": 0.8,
+                "offset": [
+                  0,
+                  0
+                ],
+                "textsize": "10px",
+                "textOnly": false,
+                "className": "",
+                "sticky": true
+              },
+              null
+            ]
+          },
+          {
+            "method": "addLegend",
+            "args": [
+              {
+                "colors": [
+                  "#053061 , #114680 4.22311611137982%, #5FA2CB 23.0925149447318%, #D9E9F1 41.9619137780837%, #FDD6C1 60.8313126114357%, #D7624F 79.7007114447876%, #710221 98.5701102781396%, #67001F "
+                ],
+                "labels": [
+                  "0",
+                  "2",
+                  "4",
+                  "6",
+                  "8",
+                  "10"
+                ],
+                "na_color": null,
+                "na_label": "NA",
+                "opacity": 0.5,
+                "position": "bottomleft",
+                "type": "numeric",
+                "title": "Average <br> Temperature (C)",
+                "extra": {
+                  "p_1": 0.0422311611137982,
+                  "p_n": 0.985701102781396
+                },
+                "layerId": null,
+                "className": "info legend",
+                "group": null
+              }
+            ]
+          }
+        ],
+        "limits": {
+          "lat": [
+            43.6532,
+            60.7212
+          ],
+          "lng": [
+            -135.0568,
+            -52.7126
+          ]
+        },
+        "setView": [
+          [
+            46,
+            -96.7898
+          ],
+          2,
+          [
+
+          ]
+        ]
+      },
+      "evals": [
+
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+
+      ]
+    }
+  }
+}
