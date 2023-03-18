@@ -24,3 +24,21 @@ test_that("{shinytest2} recording: slider_test", {
 #   app$expect_values()
 # })
 
+
+
+#test_that("{shinytest2} recording: radio_button_test", {
+#  app <- AppDriver$new(name = "radio_button_test", height = 764, width = 1139)
+#  app$set_inputs(option = "Precipitation (mm)")
+#  app$set_inputs(range = c(1940, 1990))
+#  app$expect_values(output = "line_plot2")
+#})
+
+
+
+test_that("{shinytest2} recording: ratio_button_test_2", {
+  app <- AppDriver$new(name = "ratio_button_test_2", height = 764, width = 1139)
+  app$set_inputs(option = "Precipitation (mm)")
+  app$set_inputs(range = c(1945, 2019))
+  app$expect_values(output = "line_plot")
+})
+
