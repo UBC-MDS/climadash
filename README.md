@@ -69,6 +69,6 @@ Here is a sketch of the dashboard.
 It is licensed under the terms of the MIT license.
 
 ## Dashboard Link
-📊 [Dashboard Link](https://mehdinaji.shinyapps.io/climadash/?_ga=2.176119010.1738350372.1677964154-1694350491.1676310661)
+📊 [Dashboard Link](https://jlittlefull.shinyapps.io/climadash)
 
 
