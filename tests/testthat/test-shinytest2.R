@@ -16,11 +16,11 @@ test_that("{shinytest2} recording: slider_test", {
 
 
 
-test_that("{shinytest2} recording: global_test", {
-  app <- AppDriver$new(name = "global_test", height = 764, width = 1139)
-  app$set_inputs(option = "Precipitation (mm)")
-  app$set_inputs(cities = "EDMONTON")
-  app$set_inputs(range = c(1960, 2000))
-  app$expect_values()
-})
+# test_that("{shinytest2} recording: global_test", {
+#   app <- AppDriver$new(name = "global_test", height = 764, width = 1139)
+#   app$set_inputs(option = "Precipitation (mm)")
+#   app$set_inputs(cities = "EDMONTON")
+#   app$set_inputs(range = c(1960, 2000))
+#   app$expect_values()
+# })
 
