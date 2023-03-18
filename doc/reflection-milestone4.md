@@ -11,6 +11,7 @@ Mar 17, 2023
 - Added Leaflet map with click functionality to display additional information
 - Changed color scheme of Leaflet map based on temperature or precipitation
 - Added download button for raw data access
+  
 
 ## Remaining Work:
 
