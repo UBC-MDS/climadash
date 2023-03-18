@@ -1254,13 +1254,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.17.2",
+      "Version": "0.17.1",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "aaf3c7f769695266a2113db67a25148b"
+      "Hash": "7a319d4e5743230d48bfd9ad42d02c2e"
     },
     "reprex": {
       "Package": "reprex",
