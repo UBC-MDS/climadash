@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>reflection-milestone4</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="reflection-milestone4_files/libs/clipboard/clipboard.min.js"></script>
+<script src="reflection-milestone4_files/libs/quarto-html/quarto.js"></script>
+<script src="reflection-milestone4_files/libs/quarto-html/popper.min.js"></script>
+<script src="reflection-milestone4_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="reflection-milestone4_files/libs/quarto-html/anchor.min.js"></script>
+<link href="reflection-milestone4_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="reflection-milestone4_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="reflection-milestone4_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="reflection-milestone4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="reflection-milestone4_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="reflection-for-milestone-4" class="level1">
+<h1>Reflection for Milestone 4</h1>
+<p>Mar 17, 2023</p>
+<section id="implementation" class="level2">
+<h2 class="anchored" data-anchor-id="implementation">Implementation</h2>
+<ul>
+<li>Incorporated all feedback received in the past few weeks</li>
+<li>Added more interactivity to the plots</li>
+<li>Adjusted dashboard size to fit entire dashboard on one screen</li>
+<li>Fixed bugs and errors</li>
+<li>Added tooltips using Plotly</li>
+<li>Added Leaflet map with click functionality to display additional information</li>
+<li>Changed color scheme of Leaflet map based on temperature or precipitation</li>
+<li>Added download button for raw data access</li>
+</ul>
+</section>
+<section id="remaining-work" class="level2">
+<h2 class="anchored" data-anchor-id="remaining-work">Remaining Work:</h2>
+<ul>
+<li>Further testing and optimization of dashboard performance</li>
+<li>Possible inclusion of additional data sources and metrics</li>
+<li>Continued refinement of user interface and experience</li>
+<li>Addition of more descriptive text and explanatory information throughout the dashboard</li>
+</ul>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection:</h2>
+<p>Over the past few weeks, our team has been working to implement changes to our Canadian climate change dashboard. We have taken into account all of the feedback we have received, and have made significant improvements to the dashboard to provide a more interactive and informative experience for the user.</p>
+<p>One of the key changes we made was to add more interactivity to the plots. We also adjusted the size of the dashboard so that it fits within one screen, making it more user-friendly and convenient to navigate.</p>
+<p>Another improvement we made was to fix most of bugs and errors that were present in the previous version of the dashboard. We wanted to ensure that the dashboard was running smoothly and that all of the data was accurate and up-to-date.</p>
+<p>One of the most important features we added was the tooltips, which use the Plotly library. These tooltips provide users with more detailed information about specific data points when they hover their cursor over a particular point on the plot.</p>
+<p>Additionally, we added a Leaflet map to the dashboard, which allows users to click on different cities to view more detailed information about the temperature or precipitation in that location. The color scheme of the map changes based on the selected variable, making it easy for users to visually compare different locations and see how they compare to each other.</p>
+<p>Finally, we added a download button to the dashboard, which allows users to download the raw data directly from the dashboard. This provides users with more flexibility and control over the data, and allows them to further analyze the data on their own if they wish.</p>
+<p>Overall, we are pleased with the improvements we have made to the Canadian climate change dashboard. We believe that these changes will provide a more comprehensive and engaging user experience, and we are excited to see how users will respond to these updates. We will continue to listen to feedback and make improvements as necessary to ensure that the dashboard remains useful and informative for all users.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
